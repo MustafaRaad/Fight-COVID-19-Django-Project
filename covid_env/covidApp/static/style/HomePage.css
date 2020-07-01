@@ -1,0 +1,118 @@
+
+.container{
+  margin: 3rem auto;
+}
+
+.dot {
+  height: 150px;
+  width: 150px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-grid;
+  padding: 20px 10px;
+  align-content: center;
+}
+
+.dot-centered {
+  height: 20rem;
+  width: 20rem;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  /* padding: 80px 30px; */
+  justify-content: center;
+  font-size: x-large;
+  font-weight: bold;
+      margin: -6rem auto;
+
+}
+
+#lineUL {
+   width: 15rem;
+    height: 20px;
+    background: #dc3545;
+    border-radius: 526% / 748%;
+    color: white;
+  margin: 20px -5px;
+  transform: rotate(36deg);
+}
+
+#lineUR {
+    z-index: -1;
+    width: 10rem;
+    height: 20px;
+    background: #dc3545;
+    border-radius: 526% / 748%;
+    color: white;
+    margin: -7px 87px;
+    transform: rotate(140deg);
+}
+
+#lineDL {
+     width: 18rem;
+    height: 20px;
+    background: #dc3545;
+    border-radius: 526% / 748%;
+    color: white;
+  margin: 20px 0;
+  transform: rotate(144deg);
+}
+#lineDR {
+    width: 15rem; 
+    height: 20px;
+    background: #dc3545;
+    border-radius: 526% / 748%;
+    color: white;
+    margin: 20px -5px;
+  transform: rotate(34deg);
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .dot {
+    flex-direction: column;
+  }
+  #lineUL {
+    margin: 8px -71px;
+    transform: rotate(50deg);
+  }
+  #lineUR {
+    margin: 26px -69px;
+    transform: rotate(128deg);
+  }
+  #lineDL {
+    margin: 0px -47px;
+    transform: rotate(129deg);
+  }
+  #lineDR {
+    margin: 9px -29px;
+    transform: rotate(50deg);
+  }
+}
+
+.animecenter{
+    animation: centeranime 5s ease-in-out infinite both;
+}
+@keyframes centeranime{
+ 0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}

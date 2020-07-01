@@ -1,0 +1,75 @@
+{% extends 'Navs.html' %}
+{% block title %}Home{% endblock title %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static './style/HomePage.css' %}">
+<!-- ---------------------------------------------------------------Main--------------------------------------------------------------- -->
+<div class="container text-center ">
+    <!-- ---------------------------------------------------------------row 1--------------------------------------------------------------- -->
+
+    <div class="row">
+        <div class="col-6" style="z-index: 1;">
+            <span class="dot ">
+                <h4>
+                    <b>حمى</b>
+                </h4>
+        </div>
+        <div class="col-6" style="z-index: 1;">
+            <span class="dot">
+                <h4>
+                    <b>فلاونزا</b>
+                </h4>
+            </span>
+        </div>
+    </div>
+    <!-- ---------------------------------------------------------------row 2--------------------------------------------------------------- -->
+    <div class="row">
+        <div class="col-3 offset-3">
+            <div id="lineUL"> </div>
+        </div>
+        <div class="col-3">
+            <div id="lineUR"></div>
+        </div>
+    </div>
+    <!-- ---------------------------------------------------------------row 3--------------------------------------------------------------- -->
+    <div class="row">
+        <div class="col-12" style="z-index: 2;">
+            <span class="dot-centered animecenter">
+                <span class="">
+                    <h2> فيروس كورونا <br>
+                        COVID-19
+                    </h2>
+                </span>
+        </div>
+    </div>
+    <!-- ---------------------------------------------------------------row 2--------------------------------------------------------------- -->
+    <div class="row">
+        <div class="col-3 offset-3">
+            <div id="lineDL"> </div>
+        </div>
+        <div class="col-3">
+            <div id="lineDR"></div>
+        </div>
+    </div>
+    <!-- ---------------------------------------------------------------row 5--------------------------------------------------------------- -->
+    <div class="row">
+        <div class="col-6">
+            <span class="dot ">
+                <h4>
+                    <b>عطاس</b>
+                </h4>
+            </span>
+        </div>
+        <div class="col-6 circle-1">
+            <span class="dot">
+                <h4>
+                    <b>ضيق تنفس</b>
+                </h4>
+            </span>
+        </div>
+    </div>
+</div>
+<!-- ---------------------------------------------------------------End Container--------------------------------------------------------------- -->
+{% comment %} {% endfor %} {% endcomment %}
+</main>
+{% endblock content %}

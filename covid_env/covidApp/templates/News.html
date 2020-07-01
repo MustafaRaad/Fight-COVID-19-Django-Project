@@ -1,0 +1,26 @@
+{% extends 'Navs.html' %}
+{% block title %}News{% endblock title %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static './style/News.css' %}">
+{% comment %} <main id="mainPost"> {% endcomment %}
+    {% for post in  NewsPosts %}
+    <section class="text-right">
+
+        <head>
+            <h2>{{post.title}}</h2>
+        </head>
+        <article>
+            <p>
+                {{post.content}}
+            </p>
+        </article>
+        <div class="imgs">
+            <img src="{{post.img.url}}" class="card-img-top" alt="...">
+        </div>
+        <sub>{{post.date}}</sub>
+    </section>
+
+    {% endfor %}
+    {% comment %} </main> {% endcomment %}
+{% endblock content %}

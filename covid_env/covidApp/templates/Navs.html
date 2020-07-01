@@ -1,0 +1,118 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/be7ca0ba3d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static './style/Navs.css' %}">
+    <!-- <link rel="stylesheet" href="{% static './style/HomePage.css' %}"> -->
+    <title>{% block title %} {{page_title}} {% endblock title %}</title>
+</head>
+
+<body>
+    <!-- ---------------------------------------------------------------Nav--------------------------------------------------------------- -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="navbar-collapse collapse w-100 order-0 ">
+            <ul class="navbar-nav mr-auto">
+                <a class="nav-link navbar-brand my-auto" href="HomePage.html">Fight COVID-19 project</a>
+            </ul>
+        </div>
+        <div class="mx-auto order-1">
+            <p class="navbar-brand mx-auto my-auto"><strong class="h4">{{page_title}}</strong></p>
+        </div>
+        <div class="navbar-collapse  w-100 order-2">
+            <ul class="navbar-nav ml-auto" id="up">
+                <div id="bar"></div>
+            </ul>
+        </div>
+    </nav>
+    <!-- ---------------------------------------------------------------End Nav--------------------------------------------------------------- -->
+    <!-- ---------------------------------------------------------------Side Nav--------------------------------------------------------------- -->
+
+    <div id="mySidenav" class="sidenav">
+        <div class="icon-side">
+            <a href="/"> <i class="fas fa-home" aria-hidden="true"></i> <span>الرئيسية</span></a>
+        </div>
+        <div class="icon-side">
+            <a href="/News"> <i class="fas fa-newspaper" aria-hidden="true"></i> <span>الاخبار</span></a>
+        </div>
+        <div class="icon-side">
+            <a href="/Statistics"> <i class="fas fa-poll"></i> <span>احصائيات</span></a>
+        </div>
+        <div class="icon-side">
+            <a href="/Tools"> <i class="fas fa-head-side-mask"></i> <span>ادوات الوقاية</span></a>
+        </div>
+        <div class="icon-side">
+            <a href="/Awareness"> <i class="fas fa-shield-virus"></i><span>طرق الوقاية</span></a>
+        </div>
+        <div class="icon-side">
+            <a href="/BePositive"><i class="fas fa-virus-slash"></i><span>كن ايجابيا</span></a>
+        </div>
+        <div class="icon-side">
+            <a href="/Contact"><i class="fas fa-envelope"></i><span>تواصل معنا</span></a>
+        </div>
+    </div>
+    <!-- ---------------------------------------------------------------End Side Nav--------------------------------------------------------------- -->
+    <!-- ---------------------------------------------------------------Main--------------------------------------------------------------- -->
+    <main id="main">
+        {% block content %}
+
+        {%endblock%}
+    </main>
+    <!-- ---------------------------------------------------------------Script--------------------------------------------------------------- -->
+  <script>
+        var closebtn = '<a href="javascript:void(0)" role="button" class="btn nav-item closebtn" onclick="closeNav()" ><i class="fas fa-times" aria-hidden="true"></i></a>';
+        var openbtn = '<a class="btn nav-item" role="button" onclick="openNav()"><i class="navbar-toggler-icon" aria-hidden="true"></i></a>';
+
+
+        let opener = document.createElement('div');
+        opener.id = 'opener';
+        opener.innerHTML = openbtn;
+        up.appendChild(opener);
+
+
+
+        var opened = false;
+
+        function openNav() {
+            document.getElementById("opener").remove();
+            let closer = document.createElement('div');
+            closer.id = 'closer';
+            closer.innerHTML = closebtn;
+            up.appendChild(closer);
+            document.getElementById("mySidenav").style.right = "0px";
+            document.getElementById("main").style.marginRight = "100px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        function closeNav() {
+            document.getElementById("closer").remove();
+            let opener = document.createElement('div');
+            opener.id = 'opener';
+            opener.innerHTML = openbtn;
+            up.appendChild(opener);
+            document.getElementById("mySidenav").style.right = "-180px";
+            document.getElementById("main").style.marginRight = "0";
+            document.body.style.backgroundColor = "white";
+        }
+</script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

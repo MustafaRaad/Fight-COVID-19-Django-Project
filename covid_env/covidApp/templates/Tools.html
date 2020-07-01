@@ -1,0 +1,38 @@
+{% extends 'Navs.html' %}
+{% block title %}الادوات{% endblock title %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static './style/Tools.css' %}">
+
+<!-- <h4>position: {{ToolsPosts.get_category_display}}</h4> -->
+<div class="row sel">
+    <form action="{% url 'HomePage' %}" method="get"></form>
+    <label for="cate" class="col-1">الاصناف</label>
+    <div class="form-group col-7">
+        <select class="custom-select" name="cate" id="cate">
+            <option value="1">الكل</option>
+            <option value="2">اقنعة</option>
+            <option value="3">معقمات</option>
+            <option value="4">كفوف</option>
+            <option value="5">الموصى بها</option>
+        </select>
+    </div>
+    <input type="submit" class="btn btn-primary col-2" value="صنف" />
+</div>
+{% for tool in ToolsPosts %}
+<section class="text-right">
+
+    <head>
+          <h2>{{tool.title}}</h2>
+    </head>
+    <article>
+        <p>
+            {{tool.content}}
+        </p>
+        <div class="imgs">
+            <img src="{{tool.img.url}}" class="card-img-top" alt="...">
+        </div>
+    </article>
+</section>
+{% endfor %}
+{% endblock content %}

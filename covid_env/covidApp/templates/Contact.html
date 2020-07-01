@@ -1,0 +1,39 @@
+{% extends 'Navs.html' %}
+{% block title %}News{% endblock title %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static './style/News.css' %}">
+{% comment %} <main id="mainPost"> {% endcomment %}
+        <section class="text-right">
+        
+            <form class="container  jumbotron" style="margin-top:25px ;">
+                <div class="form-group text-right">
+                    <label for="exampleFormControlInput1">الاسم</label>
+                    <input type="text" class="form-control text-right" id="exampleFormControlInput1" placeholder="اسم المستخدم">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput3">البريد الالكتروني</label>
+                    <input type="email" class="form-control text-right" id="exampleFormControlInput3"
+                        placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput2">العنوان</label>
+                    <input type="text" class="form-control text-right" id="exampleFormControlInput2"
+                        placeholder="عنوان الرسالة">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput4">الرسالة</label>
+                    <textarea rows="5" class="form-control text-right" id="exampleFormControlInput4"
+                        placeholder="الرسالة"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" id="" class="btn btn-primary w-25">اضافة صورة</button>
+                    <button type="submit" id="" class="btn btn-primary w-25">ارسال</button>
+                </div>
+            </form>
+        
+        
+        </section>
+
+    {% comment %} </main> {% endcomment %}
+{% endblock content %}
