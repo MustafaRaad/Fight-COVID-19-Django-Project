@@ -1,39 +1,91 @@
 {% extends 'Navs.html' %}
-{% block title %}News{% endblock title %}
+{% block title %}التواصل{% endblock title %}
 {% load static %}
 {% block content %}
-<link rel="stylesheet" href="{% static './style/News.css' %}">
-{% comment %} <main id="mainPost"> {% endcomment %}
-        <section class="text-right">
-        
-            <form class="container  jumbotron" style="margin-top:25px ;">
-                <div class="form-group text-right">
-                    <label for="exampleFormControlInput1">الاسم</label>
-                    <input type="text" class="form-control text-right" id="exampleFormControlInput1" placeholder="اسم المستخدم">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput3">البريد الالكتروني</label>
-                    <input type="email" class="form-control text-right" id="exampleFormControlInput3"
-                        placeholder="name@example.com">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput2">العنوان</label>
-                    <input type="text" class="form-control text-right" id="exampleFormControlInput2"
-                        placeholder="عنوان الرسالة">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput4">الرسالة</label>
-                    <textarea rows="5" class="form-control text-right" id="exampleFormControlInput4"
-                        placeholder="الرسالة"></textarea>
-                </div>
-                <div class="text-center">
-                    <button type="submit" id="" class="btn btn-primary w-25">اضافة صورة</button>
-                    <button type="submit" id="" class="btn btn-primary w-25">ارسال</button>
-                </div>
-            </form>
-        
-        
-        </section>
-
-    {% comment %} </main> {% endcomment %}
+<p class="navbar-brand mx-auto my-auto"><strong class="h4">التواصل</strong></p>
 {% endblock content %}
+{% block body %}
+<link rel="stylesheet" href="{% static './style/News.css' %}">
+    <section class="text-right">
+        <!-- <style>
+            .container {
+                padding-top: 15px;
+            }
+        
+            #id_name {
+                width: 100%
+            }
+        
+            #id_message {
+                width: 100%
+            }
+        
+            #id_email {
+                width: 100%
+            }
+        </style>
+        
+        <div class="container ">
+            <h2>Send Me a Message</h2>
+            <form action="" method="POST">
+                {% csrf_token %}
+        
+                {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+                {% endfor %}
+        
+                {% for field in form.visible_fields %}
+                <div class="form-group">
+                    {{ field.errors }}
+                    <label>{{ field.label_tag }}</label>
+                    <p>{{ field }}</p>
+                </div>
+                {% endfor %}
+                <button type="reset" class="btn btn-secondary">Reset</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div> -->
+
+        <form class="container" action="" method="POST" dir="rtl">
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+            {% endfor %}
+            {% for field in form.visible_fields %}
+
+            {{ field.errors }}
+            <div class="form-group">
+                <label >{{ field.label_tag }}</label>
+                <div class="">
+                    {{ field }}
+                </div>
+                <!-- <input type="text" class="form-control text-right" id="exampleFormControlInput1"
+                    placeholder="اسم المستخدم"> -->
+            </div>
+            <!-- <div class="form-group">
+                <label for="exampleFormControlInput3">البريد الالكتروني</label>
+                <input type="email" class="form-control text-right" id="exampleFormControlInput3"
+                    placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput2">العنوان</label>
+                <input type="text" class="form-control text-right" id="exampleFormControlInput2"
+                    placeholder="عنوان الرسالة">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput4">الرسالة</label>
+                <textarea rows="5" class="form-control text-right" id="exampleFormControlInput4"
+                    placeholder="الرسالة"></textarea>
+            </div> -->
+            {% endfor %}
+            <div class="text-center">
+                <button type="submit" id="" class="btn btn-primary w-25">حذف</button>
+                <button type="submit" id="" class="btn btn-primary w-25">اضافة صورة</button>
+                <button type="submit" id="" class="btn btn-primary w-25">ارسال</button>
+            </div>
+        </form>
+
+
+    </section>
+
+{% endblock body %}

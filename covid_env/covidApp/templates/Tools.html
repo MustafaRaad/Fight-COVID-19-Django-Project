@@ -2,6 +2,10 @@
 {% block title %}الادوات{% endblock title %}
 {% load static %}
 {% block content %}
+<p class="navbar-brand mx-auto my-auto"><strong class="h4">{{PT}}</strong></p>
+{% endblock content %}
+
+{% block body %}
 <link rel="stylesheet" href="{% static './style/Tools.css' %}">
 
 <!-- <h4>position: {{ToolsPosts.get_category_display}}</h4> -->
@@ -20,19 +24,21 @@
     <input type="submit" class="btn btn-primary col-2" value="صنف" />
 </div>
 {% for tool in ToolsPosts %}
-<section class="text-right">
+<section class="container">
+    <header>
+        <h2>{{tool.title}}</h2>
+            <sub>{{tool.category}} </sub>
 
-    <head>
-          <h2>{{tool.title}}</h2>
-    </head>
+    </header>
     <article>
-        <p>
+        <p class="text-right">
             {{tool.content}}
         </p>
-        <div class="imgs">
-            <img src="{{tool.img.url}}" class="card-img-top" alt="...">
-        </div>
     </article>
+    <div class="row image">
+        <img src="{{tool.img.url}}" class="card-img-top" alt="...">
+    </div>
 </section>
+
 {% endfor %}
-{% endblock content %}
+{% endblock body %}

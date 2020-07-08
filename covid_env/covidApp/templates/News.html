@@ -1,26 +1,30 @@
 {% extends 'Navs.html' %}
-{% block title %}News{% endblock title %}
+{% block title %}الاخبار{% endblock title %}
 {% load static %}
 {% block content %}
+<p class="navbar-brand mx-auto my-auto"><strong class="h4">{{PT}}</strong></p>
+{% endblock content %}
+{% block body %}
 <link rel="stylesheet" href="{% static './style/News.css' %}">
 {% comment %} <main id="mainPost"> {% endcomment %}
     {% for post in  NewsPosts %}
-    <section class="text-right">
-
-        <head>
+    <section class="container">
+        <header>
             <h2>{{post.title}}</h2>
-        </head>
+        </header>
         <article>
-            <p>
+            <p class="text-right">
                 {{post.content}}
             </p>
         </article>
-        <div class="imgs">
-            <img src="{{post.img.url}}" class="card-img-top" alt="...">
+        <div class="row image">
+                <img src="{{post.img.url}}" class="card-img-top" alt="...">
         </div>
-        <sub>{{post.date}}</sub>
+        <div class="row">
+            <sub>{{post.date}} - rsc:{{post.resource}} </sub>
+        </div>
     </section>
 
     {% endfor %}
     {% comment %} </main> {% endcomment %}
-{% endblock content %}
+{% endblock body %}

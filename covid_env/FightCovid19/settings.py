@@ -125,5 +125,9 @@ STATIC_URL = '/static/'
 #     os.path.join(BASE_DIR, 'static'),
 # ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "covidApp/static/media")
+MEDIA_ROOT = os.path.join(BASE_DIR, "covidApp/media")
 MEDIA_URL = "/media/"
+
+EMAIL_BACKEND="sendgrid_backend.SendgridBackend"
+SENDGRID_API_KEY = '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'
+SENDGRID_SANDBOX_MODE_IN_DEBUG=False

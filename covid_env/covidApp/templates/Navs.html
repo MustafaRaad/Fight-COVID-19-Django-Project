@@ -10,7 +10,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/be7ca0ba3d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static './style/Navs.css' %}">
     <!-- <link rel="stylesheet" href="{% static './style/HomePage.css' %}"> -->
     <title>{% block title %} {{page_title}} {% endblock title %}</title>
@@ -21,11 +20,12 @@
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="navbar-collapse collapse w-100 order-0 ">
             <ul class="navbar-nav mr-auto">
-                <a class="nav-link navbar-brand my-auto" href="HomePage.html">Fight COVID-19 project</a>
+                <a class="nav-link navbar-brand my-auto" href="/">Fight COVID-19 project</a>
             </ul>
         </div>
         <div class="mx-auto order-1">
-            <p class="navbar-brand mx-auto my-auto"><strong class="h4">{{page_title}}</strong></p>
+            {% block content %}
+            {% endblock %}
         </div>
         <div class="navbar-collapse  w-100 order-2">
             <ul class="navbar-nav ml-auto" id="up">
@@ -62,12 +62,15 @@
     <!-- ---------------------------------------------------------------End Side Nav--------------------------------------------------------------- -->
     <!-- ---------------------------------------------------------------Main--------------------------------------------------------------- -->
     <main id="main">
-        {% block content %}
+        {% block body %}
 
         {%endblock%}
     </main>
     <!-- ---------------------------------------------------------------Script--------------------------------------------------------------- -->
-  <script>
+    <footer>
+        Copyrights &copy; Musatafa Raad Mutashar
+    </footer>
+    <script>
         var closebtn = '<a href="javascript:void(0)" role="button" class="btn nav-item closebtn" onclick="closeNav()" ><i class="fas fa-times" aria-hidden="true"></i></a>';
         var openbtn = '<a class="btn nav-item" role="button" onclick="openNav()"><i class="navbar-toggler-icon" aria-hidden="true"></i></a>';
 
@@ -102,8 +105,9 @@
             document.getElementById("main").style.marginRight = "0";
             document.body.style.backgroundColor = "white";
         }
-</script>
+    </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://kit.fontawesome.com/be7ca0ba3d.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>

@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from covidApp.views import HomePageView, NewsPostView, StatisticsView, ToolsPostView, AwarenessPostView, ContactView
+from covidApp.views import HomePageView, NewsPostView, StatisticsView, ToolsPostView, AwarenessPostView, contact_form
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -26,6 +26,7 @@ urlpatterns = [
     path('Statistics/', StatisticsView, name="Statistics"),
     path('Tools/', ToolsPostView.as_view(), name="Tools"),
     path('Awareness/', AwarenessPostView.as_view(), name="Awareness"),
-    path('Contact/', ContactView, name="ContactView"),
+    path('Contact/', contact_form, name="ContactView"),
+    
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

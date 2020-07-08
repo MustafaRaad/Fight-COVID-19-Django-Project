@@ -1,7 +1,11 @@
 {% extends 'Navs.html' %}
-{% block title %}Home{% endblock title %}
+{% block title %}الرئيسية{% endblock title %}
 {% load static %}
 {% block content %}
+<p class="navbar-brand mx-auto my-auto"><strong class="h4">لنحارب كورونا</strong></p>
+{% endblock content %}
+
+{% block body %}
 <link rel="stylesheet" href="{% static './style/HomePage.css' %}">
 <!-- ---------------------------------------------------------------Main--------------------------------------------------------------- -->
 <div class="container text-center ">
@@ -72,4 +76,4 @@
 <!-- ---------------------------------------------------------------End Container--------------------------------------------------------------- -->
 {% comment %} {% endfor %} {% endcomment %}
 </main>
-{% endblock content %}
+{% endblock body %}

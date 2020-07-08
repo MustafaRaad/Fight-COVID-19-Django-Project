@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');
+
 * {
   margin: 0px;
   transition: background-color 0.5s;
+  font-family: 'Tajawal', sans-serif;
 }
 nav {
   height: 4rem;
@@ -29,12 +32,13 @@ nav {
 }
 
 .sidenav a {
-  color: #1e7e34 !important;
+  color: rgb(2,121,87);
+  color: linear-gradient(274deg, rgba(2,121,87,0.6491695789808638) 0%, rgba(44,80,215,0.8514167699920997) 93%);
   font-size: 25px;
 }
 
 .sidenav a:hover {
-  color: #303030;
+  color: #008B8B;
   text-decoration: none;
 }
 
